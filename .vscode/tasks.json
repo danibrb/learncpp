@@ -14,7 +14,7 @@
 				   "-Wsign-conversion",
 				   "-Werror",
 				   "-ggdb",
-				   "${file}",
+				   "${fileDirname}\\**.cpp",
 				   "-o",
 				   "${fileDirname}/${fileBasenameNoExtension}.exe"
 			   ],
@@ -40,7 +40,7 @@
 				   "-Werror",
 				   "-O2",
 				   "-DNDEBUG",
-				   "${file}",
+				   "${fileDirname}\\**.cpp",
 				   "-o",
 				   "${fileDirname}/${fileBasenameNoExtension}.exe"
 			   ],
