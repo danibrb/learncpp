@@ -1,53 +1,64 @@
 {
 	"version": "2.0.0",
 	"tasks": [
-		   {
-			   "label": "build active file (debug)",
-			   "type": "shell",
-			   "command": "g++",
-			   "args": [
-				   "-pedantic-errors",
-				   "-Wall",
-				   "-Weffc++",
-				   "-Wextra",
-				   "-Wconversion",
-				   "-Wsign-conversion",
-				   "-Werror",
-				   "-ggdb",
-				   "${fileDirname}\\**.cpp",
-				   "-o",
-				   "${fileDirname}/${fileBasenameNoExtension}.exe"
-			   ],
-			   "problemMatcher": [
-				   "$gcc"
-			   ],
-			   "group": {
-				   "kind": "build",
-				   "isDefault": true
-			   }
-		   },
-		   {
-			   "label": "build active file (release)",
-			   "type": "shell",
-			   "command": "g++",
-			   "args": [
-				   "-pedantic-errors",
-				   "-Wall",
-				   "-Weffc++",
-				   "-Wextra",
-				   "-Wconversion",
-				   "-Wsign-conversion",
-				   "-Werror",
-				   "-O2",
-				   "-DNDEBUG",
-				   "${fileDirname}\\**.cpp",
-				   "-o",
-				   "${fileDirname}/${fileBasenameNoExtension}.exe"
-			   ],
-			   "problemMatcher": [
-				   "$gcc"
-			   ],
-			   "group": "build"
-		   }
-	]
+        {
+            "label": "build active file (debug)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-pedantic-errors",
+                "-Wall",
+                "-Weffc++",
+                "-Wextra",
+                "-Wconversion",
+                "-Wsign-conversion",
+                "-Werror",
+                "-ggdb",
+                "${fileDirname}\\**.cpp",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build active file (release)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-pedantic-errors",
+                "-Wall",
+                "-Weffc++",
+                "-Wextra",
+                "-Wconversion",
+                "-Wsign-conversion",
+                "-Werror",
+                "-O2",
+                "-DNDEBUG",
+                "${fileDirname}\\**.cpp",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "run active file",
+            "type": "shell",
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "build active file (release)",
+            "problemMatcher": []
+        }
+    ]
 }
