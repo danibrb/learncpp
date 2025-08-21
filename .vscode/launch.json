@@ -5,9 +5,9 @@
             "name": "C/C++: Debug program",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/program.exe",
+            "program": "${fileDirname}/main.exe",
             "args": [],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
@@ -25,7 +25,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: build all (debug)",
+            "preLaunchTask": "build active file (debug)",
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
@@ -34,7 +34,7 @@
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
             "args": [],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
@@ -52,7 +52,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++.exe build active file",
+            "preLaunchTask": "build active file (debug)",
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
